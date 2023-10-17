@@ -1,0 +1,88 @@
+
+$grey-light : #eaeaea;
+$primary: #0022CC;
+$blue: #053a5f;
+$green: #28895f;
+
+
+.wrapper-controller {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  padding: 24px;
+  gap: 24px;
+  > div {
+    border: 1px solid #ccc;
+    box-shadow: 0px 10px 20px $grey-light;
+    flex: 1 1;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: sans-serif;
+    font-size: 1rem;
+    .temp-unit {
+      span {
+        color: $primary;
+      }
+    }
+    .temp-display {
+      font-family: monospace;
+      background-color: $grey-light;
+      padding: 24px;
+      font-size: 3em;
+      text-align: center;
+    }
+    .temp-control {
+      display: flex;
+      gap: 12px;
+      margin: 12px 0;
+      button {
+        flex: 1 1;
+        padding: 12px;
+        font-size: 3em;
+        background-color: darken($grey-light,10%);
+        border: solid $grey-light 1px;
+        margin: 0;
+      }
+    }
+    .range-control {
+      display: flex;
+      padding: 24px 12px;
+      .range-indicator {
+        //transform: rotate(-90deg);
+        -webkit-appearance: none;
+        appearance: none;
+        background: transparent;
+        cursor: pointer;
+        background-color: lighten($grey-light,10%);
+        appearance: slider-vertical;
+        height: 200px;
+        &::-webkit-slider-runnable-track {
+          -webkit-appearance: none;
+          appearance: none;
+          background: #053a5f;
+          height: 100%;
+          border-radius: 5px;
+          width: .5rem;
+        }
+        &::-webkit-slider-thumb {
+          -webkit-appearance: none; /* Override default look */
+          appearance: none;
+          margin-right: -3px;
+          background: lighten(#053a5f, 30%);
+          width: 15px;
+          height: 15px;
+          border-radius: 8px;
+        }
+      }
+      .range-steps {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-flow: column-reverse;
+      height: 200px;
+      font-size: 11px;
+      color: $blue;
+      }
+    }
+  }
+}
