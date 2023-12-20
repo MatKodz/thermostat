@@ -4,7 +4,6 @@ import babel from '@rollup/plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
-//import css from 'rollup-plugin-import-css';
 import scss from 'rollup-plugin-scss';
 
 export default {
@@ -31,9 +30,10 @@ export default {
     serve({
       open: true,
       verbose: true,
-      contentBase: ["", "public"],
+      contentBase: ["public", ""],
       host: "localhost",
       port: 3000,
+      historyApiFallback: true
     }),
     livereload({ watch: "dist" }),
   ]
