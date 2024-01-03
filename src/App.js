@@ -9,8 +9,8 @@ import NotFound from './components/NotFound';
 import Navbar from './components/Navbar';
 import Loading from './components/Loader';
 //import Releves from './components/Releves';
-import RelevesOld from './components/Releves_old';
-import RelevesNew from './components/Releves';
+import Releves from './components/Releves';
+import RelevesSlice from './components/RelevesSlice';
 import "./scss/style.scss";
 
 import store from './store.js';
@@ -51,11 +51,11 @@ function App(){
         },
         {
           path: "/releves",
-          element: <RelevesOld />,
+          element: <Releves />,
         },
         {
-          path: "/releves-new",
-          element: <RelevesNew />,
+          path: "/releves-slice",
+          element: <RelevesSlice />,
         },
         {
           path: "*",
@@ -66,7 +66,7 @@ function App(){
   ])
   return  <>
   <Provider store={store}>
-  <RouterProvider router={router} />
+    <RouterProvider router={router} />
   </Provider>
   </>
 }

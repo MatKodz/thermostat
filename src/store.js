@@ -3,8 +3,8 @@ import reducer from './features/reducer.js';
 import relevesReducer from "./features/relevesSlice";
 
 export default configureStore({
-  reducer: {
-    relevesSlice : relevesReducer,
+  reducer : {
+    releves : reducer,
+    relevesSlice : relevesReducer
   }
-  //reducer
 })

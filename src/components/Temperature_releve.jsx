@@ -20,7 +20,7 @@ export default function TemperatureList({tempValue,tempUnit}) {
       currentDay = currentDay.toLocaleString()
       let result = tempValue + "°" + tempUnit + " , le " +  currentDay + " par " + username
       setStatementList(prevState => [...prevState,result])
-      dispatch(addReleve({id: id, value: result}))
+      dispatch(addReleve({releveId: id, releveName: username, releveTemp: tempValue, releveUnit : tempUnit, releveDate: currentDay}))
       console.log("dispatched")
 
       setUsername("")

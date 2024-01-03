@@ -1,23 +1,27 @@
 import React from 'react';
-// import {connect} from 'react-redux';
-import {useSelector} from 'react-redux';
-import {selectReleves} from '../features/relevesSlice'
-import store from "../store.js";
+import {connect} from 'react-redux';
+import store from '../store.js'
 
 
-console.log(store.getState())
+function Releves({listeReleves}) {
 
-const xx = store.subscribe( () => console.log("state has changed"))
-
-
-console.log(selectReleves)
-
-
-export default function Releves() {
-  const listeReleves = useSelector(selectReleves);
-  console.log(listeReleves)
+  const addReleve = () => {
+    store.dispatch({type : "AJOUTER_RELEVE"})
+  }
   return <div>
-  <img src="logo-kodz.png" />
-  { listeReleves.map( releve => <p>{releve.value}</p>)}
+  <img src="redux_logo.png" />
+  { listeReleves.map( releve => <p key={releve.id}>{releve.value}</p>)}
+  <button onClick={addReleve}>Ajouter un relevé fictif</button>
     </div>
 }
+
+//const mapStateToProps = all => { {all.listeReleves} }
+
+function mapStateToProps(state) {
+  const { listeReleves } = state.releves
+  return {listeReleves}
+}
+
+// cette fonction renvoie un objet, en effet un composant attend des props (qui correspond à un object)
+
+export default connect(mapStateToProps)(Releves);

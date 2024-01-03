@@ -5,18 +5,25 @@ const initialState = {
   listeReleves :
   [
     {
-      "id": 1,
-      "value": "27°C , le 18/12/2023, 10:04:14 par Elodie"
+      releveId: 1,
+      releveTemp: 27,
+      releveUnit: "C",
+      releveName :  "Elodie"
     },
     {
-      "id": 2,
-      "value": "59°C , le 18/12/2023, 10:04:19 par Sam"
+      releveid: 2,
+      releveTemp: 59,
+      releveUnit : "F",
+      releveName: "Sam"
     },
     {
-      "id": 3,
-      "value": "19°C , le 18/12/2023, 10:04:26 par Marc"
+      releveId: 3,
+      releveTemp: 56,
+      releveUnit: "F",
+      releveName: "Marc"
     }
-]
+],
+  filterBy : "all",
 };
 
 export const relevesSlice = createSlice({
@@ -25,12 +32,18 @@ export const relevesSlice = createSlice({
   reducers : {
     addReleve : (state,action) => {
       state.listeReleves.push(action.payload)
+  },
+  filterByValue : (state, action) => {
+    return {...state, filterBy : action.payload}
   }
 }
 })
 
-export const { addReleve } = relevesSlice.actions
+export const { addReleve, filterByValue } = relevesSlice.actions
 
+//export function to select releves data
 export const selectReleves = (state) => state.relevesSlice.listeReleves;
+//export function to select filter chosen
+export const selectFilter = (state) => state.relevesSlice.filterBy;
 
 export default relevesSlice.reducer

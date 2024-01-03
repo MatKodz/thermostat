@@ -28,7 +28,7 @@ export default function toDoReducer(state = initialState, action) {
       id : 99,
       value : "Température de 100 degrés enregistrée à xxx"
         }
-      ]    
+      ]
     }
     default:
     return state

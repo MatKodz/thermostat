@@ -8,8 +8,8 @@ export default function NavBar() {
     <Link to="/global">Global</Link>
     <Link to="/api">API</Link>
     <Link to="/station/bale">Station</Link>
-    <Link to="/releves">Releves Old</Link>
-    <Link to="/releves-new">Releves New</Link>
+    <Link to="/releves">Releves </Link>
+    <Link to="/releves-slice">Releves Slice</Link>
     <Link to="/teste">Test 404</Link>
   </nav>
 }

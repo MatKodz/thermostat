@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
-import "./style.scss";
-import Navbar from "./Navbar";
+import "./scss/style.scss";
+import Navbar from "./components/Navbar";
 import { SwitchTransition, CSSTransition} from 'react-transition-group';
 
 
